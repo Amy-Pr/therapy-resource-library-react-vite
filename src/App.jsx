@@ -1,33 +1,45 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [] = useState()
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1> The Speech and Language <br/>
+                 Teletherapy Resource Library</h1>
+                 
+
+                 <section class="intro">
+                <div class="overview">
+                    <h2>Welcome to the Library</h2>
+                    <p>Below is a curated collection of online resources that I've collected over 5 years as a speech-language pathologist serving
+                        schools and private clients in teletherapy. The library is in its beta version and new and improved functions are on the way!
+                    </p>
+                </div>
+            </section>
+
+            <div class="filters">
+                    <input type="text" class="" placeholder="Search by name" />
+                    
+                    <div class="">
+                        <h4>Or filter by category:</h4> 
+
+                            <button id="all" class="btnFilter">all</button>
+                            <button id="games" class="btnFilter">games</button>
+                            <button id="fluency" class="btnFilter">fluency</button>
+                            <button id="pragmatics" class="btnFilter">pragmatics</button>
+                            <button id="stories" class="btnFilter">stories</button>
+                            <button id="expository text" class="btnFilter">expository text</button>
+                            <button id="language" class="btnFilter">language</button>
+                            <button id="articulation" class="btnFilter">articulation</button>
+                            <button id="science" class="btnFilter">science</button>
+                            <button id="videos" class="btnFilter">videos</button>
+                            <button id="voice" class="btnFilter">voice</button>
+                            <button id="aphasia" class="btnFilter">aphasia</button>
+                    </div>
+                </div>
+
     </>
   )
 }
