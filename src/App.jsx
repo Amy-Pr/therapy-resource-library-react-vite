@@ -6,11 +6,12 @@ function App() {
 
   return (
     <>
+    
       <h1> The Speech and Language <br/>
                  Teletherapy Resource Library</h1>
                  
 
-                 <section class="intro">
+            <section class="intro">
                 <div class="overview">
                     <h2>Welcome to the Library</h2>
                     <p>Below is a curated collection of online resources that I've collected over 5 years as a speech-language pathologist serving
@@ -19,6 +20,8 @@ function App() {
                 </div>
             </section>
 
+
+            <section class="resources">
             <div class="filters">
                     <input type="text" class="" placeholder="Search by name" />
                     
@@ -39,6 +42,8 @@ function App() {
                             <button id="aphasia" class="btnFilter">aphasia</button>
                     </div>
                 </div>
+                </section>
+                
 
     </>
   )
