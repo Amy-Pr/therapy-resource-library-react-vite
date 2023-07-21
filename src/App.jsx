@@ -22,7 +22,7 @@ function App() {
 
 
             <section class="resources">
-            <div class="filters">
+              <div class="filters">
                     <input type="text" class="" placeholder="Search by name" />
                     
                     <div class="">
@@ -42,7 +42,7 @@ function App() {
                             <button id="aphasia" class="btnFilter">aphasia</button>
                     </div>
                 </div>
-                </section>
+              </section>
                 
 
     </>
