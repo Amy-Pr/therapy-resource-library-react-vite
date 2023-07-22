@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Card from './Card'
 
 function App() {
   const [] = useState()
@@ -43,8 +44,8 @@ function App() {
                     </div>
                 </div>
               </section>
-                
 
+              <Card />
     </>
   )
 }
