@@ -42,7 +42,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+button, .tag { /*styles both filter chip buttons and tags in description*/
   padding: 3px 6px;
   border-radius: 5px;
   font-family: 'Archivo Black', sans-serif;
@@ -54,6 +54,7 @@ button {
   transition: border-color 0.25s;
 }
 
+
 button:hover {
   background: teal;
   /* border-color: #646cff; */
@@ -64,6 +65,23 @@ button:hover {
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }*/
+
+
+/*Styles for resource card*/
+.card {
+  width: 48%;
+  margin: 1em 0;
+  padding: 0.5em;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  background: white;
+}
+
+#tagsContainer {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -77,3 +95,4 @@ button:focus-visible {
     background-color: gold;
   }
 } 
+
