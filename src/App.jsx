@@ -28,7 +28,7 @@ function App() {
                     
                     <div class="">
                         <h4>Or filter by category:</h4> 
-
+                        {/* Possibly change this to label and checkbox structure per Karla's code */}
                             <button id="all" class="btnFilter">all</button>
                             <button id="games" class="btnFilter">games</button>
                             <button id="fluency" class="btnFilter">fluency</button>
@@ -44,7 +44,7 @@ function App() {
                     </div>
                 </div>
               </section>
-
+            {/* May add outer container div for flex styling here */}
               <Card />
     </>
   )
