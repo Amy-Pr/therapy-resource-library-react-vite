@@ -4,7 +4,7 @@ import Card from './Card';
 
 
 function App({data}) {
-  console.log(data);
+  
   const [] = useState()
 
   return (
@@ -72,13 +72,14 @@ function App({data}) {
                 </div>
               </section>
               {/* May add outer container div for flex styling here */}
-              
-              {data.map( ({title, id, description, link}) => (
+
+              {data.map( ({title, id, description, link, tags}) => (
                 <Card 
                   title={title} 
                   key={id} 
                   description={description} 
                   link={link}
+                  tags={tags}
 
                 />
 

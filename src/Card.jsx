@@ -1,7 +1,10 @@
 
-function Card ({title, description, link}) {
+function Card ({title, description, link, tags}) {
     
-    
+    const tagName = tags.map(tag => {
+        return <li>{tag}</li>
+    })
+
     return (
         
         <>       
@@ -11,9 +14,7 @@ function Card ({title, description, link}) {
 
                 <div id="tagsContainer">
                     <ul>
-                        <li>videos</li>
-                        <li>language</li>
-                        <li>pragmatics</li>
+                        {tagName}
                     </ul>
                 </div>
 
