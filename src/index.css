@@ -42,7 +42,13 @@ h1 {
   line-height: 1.1;
 }
 
-label { /*styles both filter chip buttons and tags in description*/
+ul {
+  list-style: none;
+}
+
+/*Filter chips and tag styles*/
+
+label { /*Styles filter chips*/
   padding: 3px 6px;
   border-radius: 5px;
   font-family: 'Archivo Black', sans-serif;
@@ -64,6 +70,23 @@ input[type=checkbox] {
   appearance: none;
   position: absolute;
 }
+
+/*Styles tags in resource card*/
+
+#tagsContainer ul {
+  display: flex;
+  padding: 0;
+}
+
+#tagsContainer ul li {
+  background-color: lavenderblush;
+  border: 2px solid black;
+  padding: 3px 6px;
+  border-radius: 5px;
+  margin: 5px;
+  
+}
+
 
 /* button:focus,
 button:focus-visible {

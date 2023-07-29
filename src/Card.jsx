@@ -9,9 +9,11 @@ function Card () {
                 <p id="description">This would be my one to two line description of the website</p>
 
                 <div id="tagsContainer">
-                    <span class="tag">videos</span>
-                    <span class="tag">language</span>
-                    <span class="tag">pragmatics</span>
+                    <ul>
+                        <li>videos</li>
+                        <li>language</li>
+                        <li>pragmatics</li>
+                    </ul>
                 </div>
 
             </article>

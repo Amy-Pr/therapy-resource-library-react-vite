@@ -66,19 +66,6 @@ function App() {
                               <input class="tag" name="aphasia" type="checkbox"/>
                             </label> 
 
-
-
-                            {/* <button id="games" class="btnFilter">games</button>
-                            <button id="fluency" class="btnFilter">fluency</button>
-                            <button id="pragmatics" class="btnFilter">pragmatics</button>
-                            <button id="stories" class="btnFilter">stories</button>
-                            <button id="expository text" class="btnFilter">expository text</button>
-                            <button id="language" class="btnFilter">language</button>
-                            <button id="articulation" class="btnFilter">articulation</button>
-                            <button id="science" class="btnFilter">science</button>
-                            <button id="videos" class="btnFilter">videos</button>
-                            <button id="voice" class="btnFilter">voice</button>
-                            <button id="aphasia" class="btnFilter">aphasia</button> */}
                     </div>
                 </div>
               </section>
