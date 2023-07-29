@@ -29,8 +29,46 @@ function App() {
                     <div class="">
                         <h4>Or filter by category:</h4> 
                         {/* Possibly change this to label and checkbox structure per Karla's code */}
-                            <button id="all" class="btnFilter">all</button>
-                            <button id="games" class="btnFilter">games</button>
+                            <label>all
+                              <input class="tag" name="all" type="checkbox"/>
+                            </label> 
+                            <label>games
+                              <input class="tag" name="games" type="checkbox"/>
+                            </label> 
+                            <label>fluency
+                              <input class="tag" name="fluency" type="checkbox"/>
+                            </label> 
+                            <label>pragmatics
+                              <input class="tag" name="pragmatics" type="checkbox"/>
+                            </label> 
+                            <label>stories
+                              <input class="tag" name="stories" type="checkbox"/>
+                            </label> 
+                            <label>expository text
+                              <input class="tag" name="expository text" type="checkbox"/>
+                            </label> 
+                            <label>language
+                              <input class="tag" name="language" type="checkbox"/>
+                            </label> 
+                            <label>articulation
+                              <input class="tag" name="articulation" type="checkbox"/>
+                            </label> 
+                            <label>science
+                              <input class="tag" name="science" type="checkbox"/>
+                            </label> 
+                            <label>videos
+                              <input class="tag" name="videos" type="checkbox"/>
+                            </label> 
+                            <label>voice
+                              <input class="tag" name="voice" type="checkbox"/>
+                            </label> 
+                            <label>aphasia
+                              <input class="tag" name="aphasia" type="checkbox"/>
+                            </label> 
+
+
+
+                            {/* <button id="games" class="btnFilter">games</button>
                             <button id="fluency" class="btnFilter">fluency</button>
                             <button id="pragmatics" class="btnFilter">pragmatics</button>
                             <button id="stories" class="btnFilter">stories</button>
@@ -40,7 +78,7 @@ function App() {
                             <button id="science" class="btnFilter">science</button>
                             <button id="videos" class="btnFilter">videos</button>
                             <button id="voice" class="btnFilter">voice</button>
-                            <button id="aphasia" class="btnFilter">aphasia</button>
+                            <button id="aphasia" class="btnFilter">aphasia</button> */}
                     </div>
                 </div>
               </section>
