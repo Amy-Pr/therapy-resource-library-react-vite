@@ -5,6 +5,13 @@ import Card from './Card';
 function Filters({data}) {
     const [] = useState()
 
+    //set state to an empty array that will hold the names of the selected checkboxes
+    //Onclick (when checked) push the name of the checkbox to the state array
+    //When unchecked remove the name from the state array
+
+    //If any of the names in the state array match any of the tagName list items in a card, show that card
+
+
     return (
         <>
             <section className="resources">
