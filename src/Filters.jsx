@@ -21,6 +21,7 @@ function Filters({data}) {
        
     }
 
+    //TODO: For accessibility I will want to use more than just color to indicate checked/unchecked status
     const updateCheckedStyles = (selection) => {
       return selectedFilters.includes(selection) ? 'checked-styles' : 'unchecked-styles' ; 
     };
@@ -37,42 +38,28 @@ function Filters({data}) {
                     <div className="">
                         <h4>Or filter by category:</h4> 
                         {/* TODO: Add controlled components (checkboxes) along with refactoring the labels */}
-                            <label className={updateCheckedStyles("all")}>all
+
+                        {['all', 'games', 'fluency', 'pragmatics', 'stories', 'expository text', 'language', 'articulation', 'science', 
+                        'videos', 'voice', 'aphasia'].map((selector) => (
+                            <label key={selector} className={updateCheckedStyles(selector)}>
+                                {selector}
+                                <input 
+                                  className="selector" 
+                                  name={selector} 
+                                  checked={selectedFilters.includes(selector)} 
+                                  type="checkbox" 
+                                  onChange={handleFilterSelection}/>
+                            </label> 
+
+                        ))}
+
+                            {/* <label className={updateCheckedStyles("all")}>all
                               <input className="tag" name="all" checked={selectedFilters.includes('all')} type="checkbox" onChange={handleFilterSelection}/>
                             </label> 
-                            <label className={updateCheckedStyles("games")}>games
+                            <label className={updateCheckedStyles("games")}> games
                               <input className="tag" name="games" checked={selectedFilters.includes('games')} type="checkbox" onChange={handleFilterSelection}/>
                             </label> 
-                            <label>fluency
-                              <input className="tag" name="fluency" type="checkbox"/>
-                            </label> 
-                            <label className={updateCheckedStyles("pragmatics")}>pragmatics
-                              <input className="tag" name="pragmatics" checked={selectedFilters.includes('pragmatics')} type="checkbox" onChange={handleFilterSelection}/>
-                            </label> 
-                            <label>stories
-                              <input className="tag" name="stories" type="checkbox"/>
-                            </label> 
-                            <label>expository text
-                              <input className="tag" name="expository text" type="checkbox"/>
-                            </label> 
-                            <label>language
-                              <input className="tag" name="language" type="checkbox"/>
-                            </label> 
-                            <label>articulation
-                              <input className="tag" name="articulation" type="checkbox"/>
-                            </label> 
-                            <label>science
-                              <input className="tag" name="science" type="checkbox"/>
-                            </label> 
-                            <label>videos
-                              <input className="tag" name="videos" type="checkbox"/>
-                            </label> 
-                            <label>voice
-                              <input className="tag" name="voice" type="checkbox"/>
-                            </label> 
-                            <label>aphasia
-                              <input className="tag" name="aphasia" type="checkbox"/>
-                            </label> 
+                           */}
 
                     </div>
 
