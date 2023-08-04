@@ -16,9 +16,7 @@ function Filters({data}) {
        
     }
 
-    //If any of the names in the state array match any of the tagName list items in a card, show that card
-
-
+    
     return (
         <>
             <section className="resources">
@@ -40,7 +38,7 @@ function Filters({data}) {
                               <input className="tag" name="fluency" type="checkbox"/>
                             </label> 
                             <label>pragmatics
-                              <input className="tag" name="pragmatics" type="checkbox"/>
+                              <input className="tag" name="pragmatics" type="checkbox" onChange={handleFilterSelection}/>
                             </label> 
                             <label>stories
                               <input className="tag" name="stories" type="checkbox"/>
@@ -81,6 +79,7 @@ function Filters({data}) {
                   description={description} 
                   link={link}
                   tags={tags}
+                  selectedFilters={selectedFilters}
                 />
 
               ))}
