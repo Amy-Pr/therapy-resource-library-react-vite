@@ -37,8 +37,8 @@ function Filters({data}) {
                     
                     <div className="">
                         <h4>Or filter by category:</h4> 
-                        {/* TODO: Add controlled components (checkboxes) along with refactoring the labels */}
-
+                        {/* TODO: Separate "all" filter to show all cards; remove "all" tag from cards */}
+                        
                         {['all', 'games', 'fluency', 'pragmatics', 'stories', 'expository text', 'language', 'articulation', 'science', 
                         'videos', 'voice', 'aphasia'].map((selector) => (
                             <label key={selector} className={updateCheckedStyles(selector)}>
