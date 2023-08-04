@@ -7,13 +7,14 @@ function Filters({data}) {
 
     const handleFilterSelection = (e) => {
         const filterName = e.target.name;
-        setSelectedFilters((prevState) => [...prevState, filterName,]);
-
+        //If the filter chip is selected, place the name in state array, otherwise keep only the values that do NOT equal that filter name
+        if (e.target.checked) {
+          setSelectedFilters((prevState) => [...prevState, filterName,]);
+        } else {
+          setSelectedFilters((prevState) => prevState.filter((selection) => selection !== filterName));
+        }
+       
     }
-
-    //set state to an empty array that will hold the names of the selected checkboxes
-    //Onclick (when checked) push the name of the checkbox to the state array
-    //When unchecked remove the name from the state array
 
     //If any of the names in the state array match any of the tagName list items in a card, show that card
 
@@ -28,7 +29,7 @@ function Filters({data}) {
                     
                     <div className="">
                         <h4>Or filter by category:</h4> 
-                        
+                        {/* TODO: Add controlled components (checkboxes) along with refactoring the labels */}
                             <label>all
                               <input className="tag" name="all" type="checkbox" onChange={handleFilterSelection}/>
                             </label> 
