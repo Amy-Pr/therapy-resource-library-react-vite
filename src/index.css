@@ -48,6 +48,7 @@ ul {
 
 /*Filter chips and tag styles*/
 
+
 label { /*Styles filter chips*/
   padding: 3px 6px;
   border-radius: 5px;
@@ -66,10 +67,21 @@ label:hover {
   /* border-color: #646cff; */
 }
 
+.checked-styles {
+  background-color: violet;
+  border: 2px solid blue;
+}
+
+.unchecked-styles {
+  background-color: gold;
+  border: none;
+}
+
 input[type=checkbox] {
   appearance: none;
   position: absolute;
 }
+
 
 /*Styles tags in resource card*/
 

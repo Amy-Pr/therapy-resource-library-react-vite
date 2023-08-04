@@ -1,20 +1,29 @@
 import { useState } from 'react';
+import { useRef } from 'react';
 import Card from './Card';
 
 
 function Filters({data}) {
     const [selectedFilters, setSelectedFilters] = useState([])
 
+  
     const handleFilterSelection = (e) => {
+        
         const filterName = e.target.name;
         //If the filter chip is selected, place the name in state array, otherwise keep only the values that do NOT equal that filter name
         if (e.target.checked) {
           setSelectedFilters((prevState) => [...prevState, filterName,]);
+          
         } else {
-          setSelectedFilters((prevState) => prevState.filter((selection) => selection !== filterName));
+          setSelectedFilters((prevState) => prevState.filter((selection) => selection !== filterName))
+         
         }
        
     }
+
+    const updateCheckedStyles = (selection) => {
+      return selectedFilters.includes(selection) ? 'checked-styles' : 'unchecked-styles' ; 
+    };
 
     
     return (
@@ -28,17 +37,17 @@ function Filters({data}) {
                     <div className="">
                         <h4>Or filter by category:</h4> 
                         {/* TODO: Add controlled components (checkboxes) along with refactoring the labels */}
-                            <label>all
-                              <input className="tag" name="all" type="checkbox" onChange={handleFilterSelection}/>
+                            <label className={updateCheckedStyles("all")}>all
+                              <input className="tag" name="all" checked={selectedFilters.includes('all')} type="checkbox" onChange={handleFilterSelection}/>
                             </label> 
-                            <label>games
-                              <input className="tag" name="games" type="checkbox" onChange={handleFilterSelection}/>
+                            <label className={updateCheckedStyles("games")}>games
+                              <input className="tag" name="games" checked={selectedFilters.includes('games')} type="checkbox" onChange={handleFilterSelection}/>
                             </label> 
                             <label>fluency
                               <input className="tag" name="fluency" type="checkbox"/>
                             </label> 
-                            <label>pragmatics
-                              <input className="tag" name="pragmatics" type="checkbox" onChange={handleFilterSelection}/>
+                            <label className={updateCheckedStyles("pragmatics")}>pragmatics
+                              <input className="tag" name="pragmatics" checked={selectedFilters.includes('pragmatics')} type="checkbox" onChange={handleFilterSelection}/>
                             </label> 
                             <label>stories
                               <input className="tag" name="stories" type="checkbox"/>
