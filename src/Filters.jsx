@@ -3,7 +3,13 @@ import Card from './Card';
 
 
 function Filters({data}) {
-    const [] = useState()
+    const [selectedFilters, setSelectedFilters] = useState([])
+
+    const handleFilterSelection = (e) => {
+        const filterName = e.target.name;
+        setSelectedFilters((prevState) => [...prevState, filterName,]);
+
+    }
 
     //set state to an empty array that will hold the names of the selected checkboxes
     //Onclick (when checked) push the name of the checkbox to the state array
@@ -24,10 +30,10 @@ function Filters({data}) {
                         <h4>Or filter by category:</h4> 
                         
                             <label>all
-                              <input className="tag" name="all" type="checkbox"/>
+                              <input className="tag" name="all" type="checkbox" onChange={handleFilterSelection}/>
                             </label> 
                             <label>games
-                              <input className="tag" name="games" type="checkbox"/>
+                              <input className="tag" name="games" type="checkbox" onChange={handleFilterSelection}/>
                             </label> 
                             <label>fluency
                               <input className="tag" name="fluency" type="checkbox"/>
