@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { useRef } from 'react';
 import Card from './Card';
 
 
 function Filters({data}) {
     const [selectedFilters, setSelectedFilters] = useState([])
 
+    const filtersArray = ['all', 'games', 'fluency', 'pragmatics', 'stories', 'expository text', 'language', 'articulation', 'science', 
+    'videos', 'voice', 'aphasia'];
   
     const handleFilterSelection = (e) => {
         
@@ -39,8 +40,7 @@ function Filters({data}) {
                         <h4>Or filter by category:</h4> 
                         {/* TODO: Separate "all" filter to show all cards; remove "all" tag from cards */}
                         
-                        {['all', 'games', 'fluency', 'pragmatics', 'stories', 'expository text', 'language', 'articulation', 'science', 
-                        'videos', 'voice', 'aphasia'].map((selector) => (
+                        {filtersArray.map((selector) => (
                             <label key={selector} className={updateCheckedStyles(selector)}>
                                 {selector}
                                 <input 
