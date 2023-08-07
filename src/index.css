@@ -99,12 +99,29 @@ input[type=checkbox] {
   
 }
 
+/*Button styles*/
 
 /* button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}*/
+} */
 
+button {
+  padding: 3px 6px;
+  border-radius: 5px;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1rem;
+  margin: 5px;
+  /* cursor: pointer; */
+}
+
+button:hover {
+  border: 3px solid #646cff;
+}
+
+button:active {
+  background-color: gray;
+}
 
 /*Styles for resource card*/
 .card {
@@ -131,7 +148,7 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: gold;
+    background-color:lightgray;
   }
 } 
 

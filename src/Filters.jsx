@@ -3,16 +3,20 @@ import Card from './Card';
 
 
 function Filters({data}) {
-    const [selectedFilters, setSelectedFilters] = useState([])
-    const [showAll, setShowAll] = useState(false)
+    const [selectedFilters, setSelectedFilters] = useState([]);
 
     const filtersArray = ['games', 'fluency', 'pragmatics', 'stories', 'expository text', 'language', 'articulation', 'science', 
     'videos', 'voice', 'aphasia'];
 
-    const handleShowAll = (e) => {
-      setShowAll(e.target.checked);
-      setSelectedFilters(e.target.checked ? filtersArray : []);
-    };
+
+      const handleShowAll = () => {
+       setSelectedFilters(filtersArray);
+      }
+
+      const handleReset = () => {
+        return setSelectedFilters([]);
+      }
+      
   
     const handleFilterSelection = (e) => {   
         const filterName = e.target.name;
@@ -32,10 +36,6 @@ function Filters({data}) {
       return selectedFilters.includes(selection) ? 'checked-styles' : 'unchecked-styles' ; 
     };
 
-    // const updateShowAllStyling = () => {
-       
-    //   };
-    
 
 
     
@@ -49,16 +49,13 @@ function Filters({data}) {
                     
                     <div className="">
                         <h4>Or filter by category:</h4>
-                        {/* TODO: Separate "all" filter to show all cards; remove "all" tag from cards */}
-                        <label className={showAll ? 'checked-styles' : 'unchecked-styles'}>Show all
-                          <input
-                                  className="selector" 
-                                  name="show all" 
-                                  type="checkbox" 
-                                  onChange={handleShowAll}
-                                  checked={showAll}
-                          />
-                        </label>
+                        
+                        <div>
+                        <button onClick={handleShowAll}>Show All</button>
+                        <button onClick={handleReset}>Reset Filters</button>
+                        </div>
+                        
+                        
                         {filtersArray.map((selector) => (
                             <label key={selector} className={updateCheckedStyles(selector)}>
                                 {selector}
@@ -71,6 +68,7 @@ function Filters({data}) {
                             </label> 
 
                         ))}
+                        
 
                             {/* <label className={updateCheckedStyles("all")}>all
                               <input className="tag" name="all" checked={selectedFilters.includes('all')} type="checkbox" onChange={handleFilterSelection}/>
