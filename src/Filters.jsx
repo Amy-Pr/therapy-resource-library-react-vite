@@ -32,6 +32,12 @@ function Filters({data}) {
       return selectedFilters.includes(selection) ? 'checked-styles' : 'unchecked-styles' ; 
     };
 
+    // const updateShowAllStyling = () => {
+       
+    //   };
+    
+
+
     
     return (
         <>
@@ -44,7 +50,7 @@ function Filters({data}) {
                     <div className="">
                         <h4>Or filter by category:</h4>
                         {/* TODO: Separate "all" filter to show all cards; remove "all" tag from cards */}
-                        <label className={updateCheckedStyles}>Show all
+                        <label className={showAll ? 'checked-styles' : 'unchecked-styles'}>Show all
                           <input
                                   className="selector" 
                                   name="show all" 
