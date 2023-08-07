@@ -70,14 +70,6 @@ function Filters({data}) {
                         ))}
                         
 
-                            {/* <label className={updateCheckedStyles("all")}>all
-                              <input className="tag" name="all" checked={selectedFilters.includes('all')} type="checkbox" onChange={handleFilterSelection}/>
-                            </label> 
-                            <label className={updateCheckedStyles("games")}> games
-                              <input className="tag" name="games" checked={selectedFilters.includes('games')} type="checkbox" onChange={handleFilterSelection}/>
-                            </label> 
-                           */}
-
                     </div>
 
                 </div>
