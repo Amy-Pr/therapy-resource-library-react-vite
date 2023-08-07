@@ -4,12 +4,17 @@ import Card from './Card';
 
 function Filters({data}) {
     const [selectedFilters, setSelectedFilters] = useState([])
+    const [showAll, setShowAll] = useState(false)
 
-    const filtersArray = ['all', 'games', 'fluency', 'pragmatics', 'stories', 'expository text', 'language', 'articulation', 'science', 
+    const filtersArray = ['games', 'fluency', 'pragmatics', 'stories', 'expository text', 'language', 'articulation', 'science', 
     'videos', 'voice', 'aphasia'];
+
+    const handleShowAll = (e) => {
+      setShowAll(e.target.checked);
+      setSelectedFilters(e.target.checked ? filtersArray : []);
+    };
   
-    const handleFilterSelection = (e) => {
-        
+    const handleFilterSelection = (e) => {   
         const filterName = e.target.name;
         //If the filter chip is selected, place the name in state array, otherwise keep only the values that do NOT equal that filter name
         if (e.target.checked) {
@@ -37,9 +42,17 @@ function Filters({data}) {
                     <input type="text" className="" placeholder="Search by name" />
                     
                     <div className="">
-                        <h4>Or filter by category:</h4> 
+                        <h4>Or filter by category:</h4>
                         {/* TODO: Separate "all" filter to show all cards; remove "all" tag from cards */}
-                        
+                        <label className={updateCheckedStyles}>Show all
+                          <input
+                                  className="selector" 
+                                  name="show all" 
+                                  type="checkbox" 
+                                  onChange={handleShowAll}
+                                  checked={showAll}
+                          />
+                        </label>
                         {filtersArray.map((selector) => (
                             <label key={selector} className={updateCheckedStyles(selector)}>
                                 {selector}
