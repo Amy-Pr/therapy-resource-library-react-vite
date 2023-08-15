@@ -5,7 +5,7 @@ const dataResources = [
         title: "The Literacy Shed",
         link: "https://www.literacyshed.com/",
         description: "A collection of short videos, mostly animated, some wordless.",
-        tags: ["all", "videos", "language"]
+        tags: ["videos", "language"]
     },
 
     {
@@ -13,7 +13,7 @@ const dataResources = [
         title: "Boom Cards",
         link: "https://wow.boomlearning.com/",
         description: "Great activities for on-screen use.",
-        tags: ["all", "language", "articulation", "fluency", "pragmatics", "games"]
+        tags: ["language", "articulation", "fluency", "pragmatics", "games"]
     },
 
     {
@@ -21,7 +21,7 @@ const dataResources = [
         title: "ReadWorks",
         link: "https://www.readworks.org/",
         description: "Tons of free reading material searchable by grade, goals, and genre.",
-        tags: ["all", "stories", "expository text"]
+        tags: ["stories", "expository text"]
     },
 
     {
@@ -29,7 +29,7 @@ const dataResources = [
         title: "Baamboozle",
         link: "https://www.baamboozle.com/",
         description: "Tons of card-based language games, some already created by teachers and therapists. Create your own!",
-        tags: ["all", "articulation", "games", "language"]
+        tags: ["articulation", "games", "language"]
     },
 
     {
@@ -37,7 +37,7 @@ const dataResources = [
         title: "Everyday Speech",
         link: "https://everydayspeech.com/",
         description: "Social and Emotional learning curriculum and video modeling by subscription.",
-        tags: ["all", "pragmatics", "videos"]
+        tags: ["pragmatics", "videos"]
     }
 
 

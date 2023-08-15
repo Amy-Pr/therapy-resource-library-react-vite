@@ -3,8 +3,42 @@ import Card from './Card';
 
 
 function Filters({data}) {
-    const [] = useState()
+    const [selectedFilters, setSelectedFilters] = useState([]);
 
+    const filtersArray = ['games', 'fluency', 'pragmatics', 'stories', 'expository text', 'language', 'articulation', 'science', 
+    'videos', 'voice', 'aphasia'];
+
+
+      const handleShowAll = () => {
+       setSelectedFilters(filtersArray);
+      }
+
+      const handleReset = () => {
+        return setSelectedFilters([]);
+      }
+      
+  
+    const handleFilterSelection = (e) => {   
+        const filterName = e.target.name;
+        //If the filter chip is selected, place the name in state array, otherwise keep only the values that do NOT equal that filter name
+        if (e.target.checked) {
+          setSelectedFilters((prevState) => [...prevState, filterName,]);
+          
+        } else {
+          setSelectedFilters((prevState) => prevState.filter((selection) => selection !== filterName))
+         
+        }
+       
+    }
+
+    //TODO: For accessibility I will want to use more than just color to indicate checked/unchecked status
+    const updateCheckedStyles = (selection) => {
+      return selectedFilters.includes(selection) ? 'checked-styles' : 'unchecked-styles' ; 
+    };
+
+
+
+    
     return (
         <>
             <section className="resources">
@@ -14,44 +48,27 @@ function Filters({data}) {
                     <input type="text" className="" placeholder="Search by name" />
                     
                     <div className="">
-                        <h4>Or filter by category:</h4> 
+                        <h4>Or filter by category:</h4>
                         
-                            <label>all
-                              <input className="tag" name="all" type="checkbox"/>
+                        <div>
+                        <button onClick={handleShowAll}>Show All</button>
+                        <button onClick={handleReset}>Reset Filters</button>
+                        </div>
+                        
+                        
+                        {filtersArray.map((selector) => (
+                            <label key={selector} className={updateCheckedStyles(selector)}>
+                                {selector}
+                                <input 
+                                  className="selector" 
+                                  name={selector} 
+                                  checked={selectedFilters.includes(selector)} 
+                                  type="checkbox" 
+                                  onChange={handleFilterSelection}/>
                             </label> 
-                            <label>games
-                              <input className="tag" name="games" type="checkbox"/>
-                            </label> 
-                            <label>fluency
-                              <input className="tag" name="fluency" type="checkbox"/>
-                            </label> 
-                            <label>pragmatics
-                              <input className="tag" name="pragmatics" type="checkbox"/>
-                            </label> 
-                            <label>stories
-                              <input className="tag" name="stories" type="checkbox"/>
-                            </label> 
-                            <label>expository text
-                              <input className="tag" name="expository text" type="checkbox"/>
-                            </label> 
-                            <label>language
-                              <input className="tag" name="language" type="checkbox"/>
-                            </label> 
-                            <label>articulation
-                              <input className="tag" name="articulation" type="checkbox"/>
-                            </label> 
-                            <label>science
-                              <input className="tag" name="science" type="checkbox"/>
-                            </label> 
-                            <label>videos
-                              <input className="tag" name="videos" type="checkbox"/>
-                            </label> 
-                            <label>voice
-                              <input className="tag" name="voice" type="checkbox"/>
-                            </label> 
-                            <label>aphasia
-                              <input className="tag" name="aphasia" type="checkbox"/>
-                            </label> 
+
+                        ))}
+                        
 
                     </div>
 
@@ -67,6 +84,7 @@ function Filters({data}) {
                   description={description} 
                   link={link}
                   tags={tags}
+                  selectedFilters={selectedFilters}
                 />
 
               ))}
