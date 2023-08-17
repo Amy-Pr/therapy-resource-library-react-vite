@@ -6,7 +6,7 @@ body {
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #fbf9de;
+  background-color: #E8EFF7;
 }
 
 /*root is like "main" and these are the original VITE styles; customized in App.css*/
@@ -46,6 +46,15 @@ ul {
   list-style: none;
 }
 
+.overview {
+  background: #C8CDE0;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */
+
+}
+
 /*Filter chips and tag styles*/
 
 
@@ -55,25 +64,31 @@ label { /*Styles filter chips*/
   font-family: 'Archivo Black', sans-serif;
   font-size: 1rem;
   margin: 5px;
-  background: gold;
+  background-color: #453E4F;
   box-shadow: none;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: white;
 }
 
 
 label:hover {
-  background: teal;
-  /* border-color: #646cff; */
+  /* background-color: #cac4d1; */
+  /* background-color: #ac80a0; */
+  border: 3px solid blue;
 }
+
 
 .checked-styles {
-  background-color: violet;
-  border: 2px solid blue;
+  /* background-color: #ac80a0; */
+  /* background: #AC81F7; */
+  background-color: #e1b14c;
+  color: black;
 }
+  
 
 .unchecked-styles {
-  background-color: gold;
+  background-color: #453E4F;
   border: none;
 }
 
@@ -113,6 +128,7 @@ button {
   font-size: 1rem;
   margin: 5px;
   /* cursor: pointer; */
+  
 }
 
 button:hover {
@@ -130,7 +146,7 @@ button:active {
   padding: 0.5em;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  background: white;
+  background-color: white;
 }
 
 #tagsContainer {
