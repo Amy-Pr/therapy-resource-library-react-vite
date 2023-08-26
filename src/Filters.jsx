@@ -5,8 +5,8 @@ import Card from './Card';
 function Filters({data}) {
     const [selectedFilters, setSelectedFilters] = useState([]);
 
-    const filtersArray = ['games', 'fluency', 'pragmatics', 'stories', 'expository text', 'language', 'articulation', 'science', 
-    'videos', 'voice', 'aphasia'];
+    const therapyFilters = ['fluency', 'pragmatics', 'language', 'articulation', 'voice', 'aphasia'];
+    const activityFilters = ['games', 'expository text', 'videos', 'stories', 'science'];
 
 
       const handleReset = () => {
@@ -44,14 +44,11 @@ function Filters({data}) {
                     <input type="text" className="" placeholder="Search by name" />
                     
                     <div className="">
-                        <h4>Or filter by category:</h4>
+                        <h4>Or filter by tags:</h4>
                         
                         <div>
-                        <button onClick={handleReset}>Clear Filters</button>
-                        </div>
-                        
-                        
-                        {filtersArray.map((selector) => (
+                        <h5>Therapy type:</h5>
+                        {therapyFilters.map((selector) => (
                             <label key={selector} className={updateCheckedStyles(selector)}>
                                 {selector}
                                 <input 
@@ -63,8 +60,28 @@ function Filters({data}) {
                             </label> 
 
                         ))}
-                        
+                        <button>Clear Filters</button>
+                        </div>
 
+                        <div>
+                        <h5>Activity type:</h5>
+                        {activityFilters.map((selector) => (
+                            <label key={selector} className={updateCheckedStyles(selector)}>
+                                {selector}
+                                <input 
+                                  className="selector" 
+                                  name={selector} 
+                                  checked={selectedFilters.includes(selector)} 
+                                  type="checkbox" 
+                                  onChange={handleFilterSelection}/>
+                            </label> 
+                            
+                        ))}
+                        <button>Clear Filters</button>
+                        </div>
+                        
+                        
+                        
                     </div>
 
                 </div>
