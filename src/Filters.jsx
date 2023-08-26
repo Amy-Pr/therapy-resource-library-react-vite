@@ -9,10 +9,6 @@ function Filters({data}) {
     'videos', 'voice', 'aphasia'];
 
 
-      const handleShowAll = () => {
-       setSelectedFilters(filtersArray);
-      }
-
       const handleReset = () => {
         return setSelectedFilters([]);
       }
@@ -51,8 +47,7 @@ function Filters({data}) {
                         <h4>Or filter by category:</h4>
                         
                         <div>
-                        <button onClick={handleShowAll}>Show All</button>
-                        <button onClick={handleReset}>Reset Filters</button>
+                        <button onClick={handleReset}>Clear Filters</button>
                         </div>
                         
                         
