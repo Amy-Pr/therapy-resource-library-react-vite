@@ -5,17 +5,17 @@ import Card from './Card';
 function Filters({data}) {
     const [selectedFilters, setSelectedFilters] = useState([]);
 
-    const filtersArray = ['games', 'fluency', 'pragmatics', 'stories', 'expository text', 'language', 'articulation', 'science', 
-    'videos', 'voice', 'aphasia'];
+    const therapyFilters = ['fluency', 'pragmatics', 'language', 'articulation', 'voice', 'aphasia'];
+    const activityFilters = ['games', 'expository text', 'videos', 'stories', 'science'];
 
+    //Keep only the selections that are not included in the specified array (group of tags)
+    const resetTherapyFilters = () => {
+      setSelectedFilters((prevState) => prevState.filter((selection) => !therapyFilters.includes(selection)))
+    }
 
-      const handleShowAll = () => {
-       setSelectedFilters(filtersArray);
-      }
-
-      const handleReset = () => {
-        return setSelectedFilters([]);
-      }
+    const resetActivityFilters = () => {
+      setSelectedFilters((prevState) => prevState.filter((selection) => !activityFilters.includes(selection)))
+    }
       
   
     const handleFilterSelection = (e) => {   
@@ -36,9 +36,7 @@ function Filters({data}) {
       return selectedFilters.includes(selection) ? 'checked-styles' : 'unchecked-styles' ; 
     };
 
-
-
-    
+    //TODO: For UX, consider instead of "filter" terminology, use "search by tags" and "clear selection"
     return (
         <>
             <section className="resources">
@@ -48,15 +46,11 @@ function Filters({data}) {
                     <input type="text" className="" placeholder="Search by name" />
                     
                     <div className="">
-                        <h4>Or filter by category:</h4>
+                        <h4>Or filter by tags:</h4>
                         
-                        <div>
-                        <button onClick={handleShowAll}>Show All</button>
-                        <button onClick={handleReset}>Reset Filters</button>
-                        </div>
-                        
-                        
-                        {filtersArray.map((selector) => (
+                        <div className="filter-div">
+                        <h5>Therapy type:</h5>
+                        {therapyFilters.map((selector) => (
                             <label key={selector} className={updateCheckedStyles(selector)}>
                                 {selector}
                                 <input 
@@ -68,8 +62,26 @@ function Filters({data}) {
                             </label> 
 
                         ))}
-                        
+                        <button onClick={resetTherapyFilters}>Clear Filters</button>
+                        </div>
 
+                        <div className="filter-div">
+                        <h5>Activity type:</h5>
+                        {activityFilters.map((selector) => (
+                            <label key={selector} className={updateCheckedStyles(selector)}>
+                                {selector}
+                                <input 
+                                  className="selector" 
+                                  name={selector} 
+                                  checked={selectedFilters.includes(selector)} 
+                                  type="checkbox" 
+                                  onChange={handleFilterSelection}/>
+                            </label> 
+                            
+                        ))}
+                        <button onClick={resetActivityFilters}>Clear Filters</button>
+                        </div>
+                        
                     </div>
 
                 </div>

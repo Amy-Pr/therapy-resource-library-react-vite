@@ -5,8 +5,8 @@ function Card ({selectedFilters, title, description, link, tags}) {
         return <li>{tag}</li>
     })
 
-    //Checks to see if a card's tag name is included in the selectedFilters array, if so returns true
-    const displayCard = tags.some((tag) => selectedFilters.includes(tag));
+    //Checks to see if state is empty (if so, shows all cards) or if a card's tag name is included in state, if so returns true.
+    const displayCard = selectedFilters.length === 0 || tags.some((tag) => selectedFilters.includes(tag));
 
 
     if (!displayCard) {

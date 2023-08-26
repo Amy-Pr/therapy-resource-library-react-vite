@@ -42,6 +42,10 @@ h1 {
   line-height: 1.1;
 }
 
+h5 {
+  margin: auto;
+}
+
 ul {
   list-style: none;
 }
@@ -56,7 +60,9 @@ ul {
 }
 
 /*Filter chips and tag styles*/
-
+.filter-div {
+  display: inline-flex;
+}
 
 label { /*Styles filter chips*/
   padding: 3px 6px;
