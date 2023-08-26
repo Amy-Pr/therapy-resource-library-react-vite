@@ -8,10 +8,14 @@ function Filters({data}) {
     const therapyFilters = ['fluency', 'pragmatics', 'language', 'articulation', 'voice', 'aphasia'];
     const activityFilters = ['games', 'expository text', 'videos', 'stories', 'science'];
 
+    //Keep only the selections that are not included in the specified array (group of tags)
+    const resetTherapyFilters = () => {
+      setSelectedFilters((prevState) => prevState.filter((selection) => !therapyFilters.includes(selection)))
+    }
 
-      const handleReset = () => {
-        return setSelectedFilters([]);
-      }
+    const resetActivityFilters = () => {
+      setSelectedFilters((prevState) => prevState.filter((selection) => !activityFilters.includes(selection)))
+    }
       
   
     const handleFilterSelection = (e) => {   
@@ -60,7 +64,7 @@ function Filters({data}) {
                             </label> 
 
                         ))}
-                        <button>Clear Filters</button>
+                        <button onClick={resetTherapyFilters}>Clear Filters</button>
                         </div>
 
                         <div>
@@ -77,10 +81,8 @@ function Filters({data}) {
                             </label> 
                             
                         ))}
-                        <button>Clear Filters</button>
+                        <button onClick={resetActivityFilters}>Clear Filters</button>
                         </div>
-                        
-                        
                         
                     </div>
 
