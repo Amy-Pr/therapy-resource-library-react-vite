@@ -50,7 +50,7 @@ function Filters({data}) {
                     <div className="">
                         <h4>Or filter by tags:</h4>
                         
-                        <div>
+                        <div className="filterdiv">
                         <h5>Therapy type:</h5>
                         {therapyFilters.map((selector) => (
                             <label key={selector} className={updateCheckedStyles(selector)}>
@@ -67,7 +67,7 @@ function Filters({data}) {
                         <button onClick={resetTherapyFilters}>Clear Filters</button>
                         </div>
 
-                        <div>
+                        <div className="filter-div">
                         <h5>Activity type:</h5>
                         {activityFilters.map((selector) => (
                             <label key={selector} className={updateCheckedStyles(selector)}>
