@@ -36,9 +36,7 @@ function Filters({data}) {
       return selectedFilters.includes(selection) ? 'checked-styles' : 'unchecked-styles' ; 
     };
 
-
-
-    
+    //TODO: For UX, consider instead of "filter" terminology, use "search by tags" and "clear selection"
     return (
         <>
             <section className="resources">
