@@ -50,7 +50,7 @@ function Filters({data}) {
                     <div className="">
                         <h4>Or filter by tags:</h4>
                         
-                        <div className="filterdiv">
+                        <div className="filter-div">
                         <h5>Therapy type:</h5>
                         {therapyFilters.map((selector) => (
                             <label key={selector} className={updateCheckedStyles(selector)}>
