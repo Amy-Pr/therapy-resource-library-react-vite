@@ -12,7 +12,7 @@ const dataResources = [
         id: 2,
         title: "Boom Cards",
         link: "https://wow.boomlearning.com/",
-        description: "Great activities for on-screen use.",
+        description: "Great activities and games for on-screen use.",
         tags: ["language", "articulation", "fluency", "pragmatics", "games"]
     },
 

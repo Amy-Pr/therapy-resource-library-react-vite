@@ -4,12 +4,21 @@ import Card from './Card';
 
 function Filters({data}) {
     const [selectedFilters, setSelectedFilters] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
 
 // Set a new state to be set to user's input value in the search box onChange
 //filter the data array and return a new array with items whose titles, descriptions, or tags match any part of the search term
 //display those items
 
+//BEGIN SEARCH FUNCTIONS
+// const keywordData = data.filter(
+//   ({ title, description, tags }) =>
+//     title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+//     description.toLowerCase().includes(searchTerm.toLowerCase())
+// );
 
+
+//BEGIN FILTERS FUNCTIONS
     const therapyFilters = ['fluency', 'pragmatics', 'language', 'articulation', 'voice', 'aphasia'];
     const activityFilters = ['games', 'expository text', 'videos', 'stories', 'science'];
 
@@ -48,7 +57,13 @@ function Filters({data}) {
 
               <div className="filters">
 
-                    <input type="text" className="" placeholder="Search by name" />
+                    <input 
+                      type="text" 
+                      className="" 
+                      placeholder="Search by keyword" 
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      />
                     
                     <div className="">
                         <h4>Or filter by tags:</h4>
@@ -102,6 +117,7 @@ function Filters({data}) {
                   link={link}
                   tags={tags}
                   selectedFilters={selectedFilters}
+                  searchTerm={searchTerm}
                 />
 
               ))}
