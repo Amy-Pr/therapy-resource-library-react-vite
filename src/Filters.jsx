@@ -6,7 +6,6 @@ function Filters({data}) {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
 
-//BEGIN FILTERS FUNCTIONS
     const therapyFilters = ['fluency', 'pragmatics', 'language', 'articulation', 'voice', 'aphasia'];
     const activityFilters = ['games', 'expository text', 'videos', 'stories', 'science'];
 
@@ -54,7 +53,7 @@ function Filters({data}) {
                       />
                     
                     <div className="">
-                        <h4>Or filter by tags:</h4>
+                        <h4>Filter by tags:</h4>
                         
                         <div className="filter-div">
                         <h5>Therapy type:</h5>
