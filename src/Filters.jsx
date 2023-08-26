@@ -5,6 +5,11 @@ import Card from './Card';
 function Filters({data}) {
     const [selectedFilters, setSelectedFilters] = useState([]);
 
+// Set a new state to be set to user's input value in the search box onChange
+//filter the data array and return a new array with items whose titles, descriptions, or tags match any part of the search term
+//display those items
+
+
     const therapyFilters = ['fluency', 'pragmatics', 'language', 'articulation', 'voice', 'aphasia'];
     const activityFilters = ['games', 'expository text', 'videos', 'stories', 'science'];
 
