@@ -1,17 +1,11 @@
 
-function Card ({selectedFilters, title, description, link, tags}) {
+function Card ({title, description, link, tags}) {
 
     const tagName = tags.map(tag => {
         return <li>{tag}</li>
     })
 
-    //Checks to see if state is empty (if so, shows all cards) or if a card's tag name is included in state, if so returns true.
-    const displayCard = selectedFilters.length === 0 || tags.some((tag) => selectedFilters.includes(tag));
 
-
-    if (!displayCard) {
-        return null;
-    } else {
         return (
     
             <>       
@@ -32,7 +26,7 @@ function Card ({selectedFilters, title, description, link, tags}) {
 
     }
 
-}
+// }
 
     
 
