@@ -33,6 +33,9 @@ function Filters({data}) {
       setSelectedFilters((prevState) => prevState.filter((selection) => !activityFilters.includes(selection)))
     }
       
+    const clearSearch = () => {
+      setSearchTerm('');
+    }
 
     // Filters the data array based on selected filters and search terms
 
@@ -68,6 +71,8 @@ function Filters({data}) {
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       />
+
+                      <button onClick={clearSearch}>clear</button>
                     
                     <div className="">
                         <h4>Filter by tags:</h4>
