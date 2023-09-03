@@ -1,7 +1,28 @@
 import './App.css';
 import Filters from './Filters';
+import { getResources } from './config/firebase-functions';
+import { useState, useEffect } from 'react'
 
-function App({data}) {
+function App() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  //Fetch data from Firestore database and set to state
+  useEffect(() => {
+    setLoading(true);
+    const fetchData = async () => {
+      try {
+        const dataFromFirestore = await getResources();
+        setData(dataFromFirestore || []);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching data from Firestore:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
 
   return (
     <>
@@ -19,7 +40,7 @@ function App({data}) {
                 </div>
             </section>
 
-            <Filters data={data} />
+            <Filters data={data} loading={loading}/>
               
     </>
   )

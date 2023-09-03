@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card from './Card';
 
 
-function Filters({data}) {
+function Filters({data, loading}) {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    
 
+    //FILTER OPTIONS
     const therapyFilters = ['fluency', 'pragmatics', 'language', 'articulation', 'voice', 'aphasia'];
     const activityFilters = ['games', 'expository text', 'videos', 'stories', 'science'];
 
@@ -38,7 +40,6 @@ function Filters({data}) {
     }
 
     // Filters the data array based on selected filters and search terms
-
     const filteredData = data.filter(({ title, description, tags }) => {
       //Checks to see if state is empty (if so, shows all cards) or if a card's tag name is included in state, if so returns true.
       const matchesFilters = selectedFilters.length === 0 || tags.some((tag) => selectedFilters.includes(tag)); 
@@ -74,6 +75,7 @@ function Filters({data}) {
 
                       <button onClick={clearSearch}>clear</button>
                     
+                    {/* TODO: Maybe make this it's own component? Down to line 129? */}
                     <div className="">
                         <h4>Filter by tags:</h4>
                         
@@ -118,9 +120,11 @@ function Filters({data}) {
               
               {/* May add outer container div for flex styling here */}
             
-            {filteredData.length === 0 ? (
+            {
+              (loading) ? <p>Loading...</p> : 
+              filteredData.length === 0 ? (
               <p>No results found</p>
-            ) : (
+              ) : (
               filteredData.map( ({title, id, description, link, tags}) => (
                   <Card 
                     title={title} 
