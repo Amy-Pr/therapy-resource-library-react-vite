@@ -1,7 +1,9 @@
 import './App.css';
 import Filters from './Filters';
+import { getResources } from './config/firebase-functions';
 
 function App({data}) {
+
 
   return (
     <>
