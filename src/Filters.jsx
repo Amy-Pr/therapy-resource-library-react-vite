@@ -1,10 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card from './Card';
+import { getResources } from './config/firebase-functions';
 
 
-function Filters({data}) {
+function Filters() {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    const [data, setData] = useState([]);
+
+    //Fetch data from Firestore database
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const dataFromFirestore = await getResources();
+          setData(dataFromFirestore || []);
+        } catch (error) {
+          console.error('Error fetching data from Firestore:', error);
+        }
+      };
+  
+      fetchData();
+    }, []);
+
 
     const therapyFilters = ['fluency', 'pragmatics', 'language', 'articulation', 'voice', 'aphasia'];
     const activityFilters = ['games', 'expository text', 'videos', 'stories', 'science'];
@@ -38,7 +55,6 @@ function Filters({data}) {
     }
 
     // Filters the data array based on selected filters and search terms
-
     const filteredData = data.filter(({ title, description, tags }) => {
       //Checks to see if state is empty (if so, shows all cards) or if a card's tag name is included in state, if so returns true.
       const matchesFilters = selectedFilters.length === 0 || tags.some((tag) => selectedFilters.includes(tag)); 

@@ -21,7 +21,7 @@ function App({data}) {
                 </div>
             </section>
 
-            <Filters data={data} />
+            <Filters />
               
     </>
   )
