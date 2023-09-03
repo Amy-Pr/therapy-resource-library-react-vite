@@ -8,7 +8,7 @@ function Filters() {
     const [searchTerm, setSearchTerm] = useState('');
     const [data, setData] = useState([]);
 
-    //Fetch data from Firestore database
+    //Fetch data from Firestore database and set to state
     useEffect(() => {
       const fetchData = async () => {
         try {
@@ -23,6 +23,7 @@ function Filters() {
     }, []);
 
 
+    //FILTER OPTIONS
     const therapyFilters = ['fluency', 'pragmatics', 'language', 'articulation', 'voice', 'aphasia'];
     const activityFilters = ['games', 'expository text', 'videos', 'stories', 'science'];
 
@@ -90,6 +91,7 @@ function Filters() {
 
                       <button onClick={clearSearch}>clear</button>
                     
+                    {/* TODO: Maybe make this it's own component? Down to line 129? */}
                     <div className="">
                         <h4>Filter by tags:</h4>
                         
