@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Card from './Card';
 
 
-function Filters({data}) {
+function Filters({data, loading}) {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     
@@ -120,9 +120,11 @@ function Filters({data}) {
               
               {/* May add outer container div for flex styling here */}
             
-            {filteredData.length === 0 ? (
+            {
+              (loading) ? <p>Loading...</p> : 
+              filteredData.length === 0 ? (
               <p>No results found</p>
-            ) : (
+              ) : (
               filteredData.map( ({title, id, description, link, tags}) => (
                   <Card 
                     title={title} 
