@@ -1,27 +1,11 @@
 import { useState, useEffect } from 'react';
 import Card from './Card';
-import { getResources } from './config/firebase-functions';
 
 
-function Filters() {
+function Filters({data}) {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-    const [data, setData] = useState([]);
-
-    //Fetch data from Firestore database and set to state
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const dataFromFirestore = await getResources();
-          setData(dataFromFirestore || []);
-        } catch (error) {
-          console.error('Error fetching data from Firestore:', error);
-        }
-      };
-  
-      fetchData();
-    }, []);
-
+    
 
     //FILTER OPTIONS
     const therapyFilters = ['fluency', 'pragmatics', 'language', 'articulation', 'voice', 'aphasia'];
