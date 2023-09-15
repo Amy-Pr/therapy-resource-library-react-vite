@@ -118,7 +118,7 @@ function Filters({data, loading}) {
                 </div>
             </section>
               
-              {/* May add outer container div for flex styling here */}
+            <section id="cards-section">
             
             {
               (loading) ? <p>Loading...</p> : 
@@ -137,6 +137,7 @@ function Filters({data, loading}) {
             
             )}
 
+            </section>
 
         </>
     )
