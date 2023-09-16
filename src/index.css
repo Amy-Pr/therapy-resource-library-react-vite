@@ -86,24 +86,27 @@ label {
 }
 
 
-
 .checked-styles {
   /* background-color: #ac80a0; */
   /* background: #AC81F7; */
   background-color: #e1b14c;
   color: black;
-  transition: background-color 0.5s;
+  transition: background-color 0.2s;
 }
 
-/* .checked-styles:hover {
-  background-color: white;
+.checked-styles:hover {
+  background-color: #f8d697;
 }
-   */
+  
 
 .unchecked-styles {
   background-color: #453E4F;
-  transition: background-color 0.5s;
+  transition: background-color 0.2s;
   border: none;
+}
+
+.unchecked-styles:hover {
+  background-color: #cac4d1;
 }
 
 
@@ -232,6 +235,10 @@ button:active {
 } 
 
 @media (max-width: 440px) {
+  #cards-section {
+    flex-flow: column;
+    align-items: center;
+  }
   .card {
     width: 320px;
     height: 280px;
