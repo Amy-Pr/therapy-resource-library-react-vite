@@ -63,7 +63,7 @@ function Filters({data, loading}) {
         <>
             <section className="resources">
 
-              <div className="filters">
+              <div className="search">
 
                     <input 
                       type="text" 
@@ -74,9 +74,10 @@ function Filters({data, loading}) {
                       />
 
                       <button onClick={clearSearch}>clear</button>
+                </div>
                     
                     {/* TODO: Maybe make this it's own component? Down to line 129? */}
-                    <div className="">
+                    <div className="filters">
                         <h4>Filter by tags:</h4>
                         
                         <div className="filter-div">
@@ -118,8 +119,8 @@ function Filters({data, loading}) {
                         </div>
                         
                     </div>
-
-                </div>
+                  
+                
 
                 <h5>Results: {counter}</h5>
 
