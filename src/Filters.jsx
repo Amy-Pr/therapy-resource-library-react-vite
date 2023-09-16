@@ -52,6 +52,7 @@ function Filters({data, loading}) {
       return matchesFilters && matchesSearch;
   });
 
+    let counter = filteredData.length
 
     //TODO: For accessibility I will want to use more than just color to indicate checked/unchecked status
     const updateCheckedStyles = (selection) => {
@@ -116,6 +117,9 @@ function Filters({data, loading}) {
                     </div>
 
                 </div>
+
+                <h5>Results: {counter}</h5>
+
             </section>
               
             <section id="cards-section">
@@ -123,7 +127,7 @@ function Filters({data, loading}) {
             {
               (loading) ? <p>Loading...</p> : 
               filteredData.length === 0 ? (
-              <p>No results found</p>
+              <p>No results found. Try a new keyword or clearing more filters.</p>
               ) : (
               filteredData.map( ({title, id, description, link, tags}) => (
                   <Card 

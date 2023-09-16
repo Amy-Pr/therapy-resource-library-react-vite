@@ -33,6 +33,7 @@ a {
 }
 a:hover {
   color: #535bf2;
+  text-decoration: underline dotted;
 }
 
 
@@ -40,6 +41,11 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+
+h3 {
+  text-align: center;
+}
+
 
 h5 {
   margin: auto;
@@ -76,12 +82,6 @@ label { /*Styles filter chips*/
   color: white;
 }
 
-
-label:hover {
-  /* background-color: #cac4d1; */
-  /* background-color: #ac80a0; */
-  border: 3px solid blue;
-}
 
 
 .checked-styles {
@@ -133,6 +133,7 @@ button:active {
 #cards-section {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 
@@ -158,17 +159,34 @@ button:active {
 /*Styles for resource card*/
 .card {
   width: 400px;
-  height: 400px;
+  height: 350px;
   margin: 1em 0;
-  margin-left: 20px;
   padding: 20px 40px;
   border-radius: 30px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   background-color: white;
   box-sizing: border-box;
-  border-top: 30px solid #453E4F;
+  border-top: 30px solid #AC80A0;
 }
 
+
+.animate.pop {
+  animation-duration: 0.5s;
+  animation-name: animate-pop;
+  animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+}
+
+@keyframes animate-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
 
 
 @media (prefers-color-scheme: light) {
@@ -183,4 +201,17 @@ button:active {
     background-color:lightgray;
   }
 } 
+
+@media (max-width: 440px) {
+  .card {
+    width: 320px;
+    height: 280px;
+    padding-top: 0;
+  }
+
+  #root {
+    font-size: .76em;
+  }
+  
+}
 
