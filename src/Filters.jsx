@@ -54,7 +54,6 @@ function Filters({data, loading}) {
 
     let counter = filteredData.length
 
-    //TODO: For accessibility I will want to use more than just color to indicate checked/unchecked status
     const updateCheckedStyles = (selection) => {
       return selectedFilters.includes(selection) ? 'checked-styles checkbox' : 'unchecked-styles checkbox' ; 
     };
