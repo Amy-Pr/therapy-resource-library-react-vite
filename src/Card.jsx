@@ -9,10 +9,10 @@ function Card ({title, description, link, tags}) {
         return (
     
             <>       
-                <article className="card" id="resource">
-                    <h3><a id="title" href={link} target="_blank">{title}</a></h3>
+                <article className="card animate pop" id="resource">
+                    <h3><a id="title" href={link} target="_blank">{title}  </a></h3>
                     <p id="description">{description}</p>
-    
+                    
                     <div id="tagsContainer">
                         <ul>
                             {tagName}
