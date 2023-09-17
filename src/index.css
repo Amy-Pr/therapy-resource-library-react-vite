@@ -73,13 +73,14 @@ a:hover {
   display: flex;
   flex-flow: column;
   align-items: start;
+  margin: 15px 0;
 }
 
 /*Filter Chip Styles*/
 .filter-div {
   display: inline-flex;
   align-items: center;
-  margin: 5px;
+  margin: 6px;
 }
 
 label { 
