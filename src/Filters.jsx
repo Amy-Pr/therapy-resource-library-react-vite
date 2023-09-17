@@ -54,9 +54,8 @@ function Filters({data, loading}) {
 
     let counter = filteredData.length
 
-    //TODO: For accessibility I will want to use more than just color to indicate checked/unchecked status
     const updateCheckedStyles = (selection) => {
-      return selectedFilters.includes(selection) ? 'checked-styles' : 'unchecked-styles' ; 
+      return selectedFilters.includes(selection) ? 'checked-styles checkbox' : 'unchecked-styles checkbox' ; 
     };
 
     //TODO: For UX, consider instead of "filter" terminology, use "search by tags" and "clear selection"
@@ -64,7 +63,7 @@ function Filters({data, loading}) {
         <>
             <section className="resources">
 
-              <div className="filters">
+              <div className="search">
 
                     <input 
                       type="text" 
@@ -75,22 +74,28 @@ function Filters({data, loading}) {
                       />
 
                       <button onClick={clearSearch}>clear</button>
+                </div>
+
+                {/* <h4>Filter by tags:</h4> */}
                     
                     {/* TODO: Maybe make this it's own component? Down to line 129? */}
-                    <div className="">
-                        <h4>Filter by tags:</h4>
+                    <div className="filters">
+                        
                         
                         <div className="filter-div">
                         <h5>Therapy type:</h5>
                         {therapyFilters.map((selector) => (
                             <label key={selector} className={updateCheckedStyles(selector)}>
-                                {selector}
+                                
                                 <input 
                                   className="selector" 
                                   name={selector} 
                                   checked={selectedFilters.includes(selector)} 
                                   type="checkbox" 
                                   onChange={handleFilterSelection}/>
+
+                                <span>{selector}</span>
+
                             </label> 
 
                         ))}
@@ -101,13 +106,14 @@ function Filters({data, loading}) {
                         <h5>Activity type:</h5>
                         {activityFilters.map((selector) => (
                             <label key={selector} className={updateCheckedStyles(selector)}>
-                                {selector}
+                                
                                 <input 
                                   className="selector" 
                                   name={selector} 
                                   checked={selectedFilters.includes(selector)} 
                                   type="checkbox" 
                                   onChange={handleFilterSelection}/>
+                                  <span>{selector}</span>
                             </label> 
                             
                         ))}
@@ -115,8 +121,8 @@ function Filters({data, loading}) {
                         </div>
                         
                     </div>
-
-                </div>
+                  
+                
 
                 <h5>Results: {counter}</h5>
 
