@@ -61,7 +61,18 @@ a:hover {
   margin-bottom: 20px;
   border-radius: 5px;
   /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */
+}
 
+.resources {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.filters {
+  display: flex;
+  flex-flow: column;
+  align-items: start;
 }
 
 /*Filter Chip Styles*/

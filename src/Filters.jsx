@@ -75,10 +75,12 @@ function Filters({data, loading}) {
 
                       <button onClick={clearSearch}>clear</button>
                 </div>
+
+                {/* <h4>Filter by tags:</h4> */}
                     
                     {/* TODO: Maybe make this it's own component? Down to line 129? */}
                     <div className="filters">
-                        <h4>Filter by tags:</h4>
+                        
                         
                         <div className="filter-div">
                         <h5>Therapy type:</h5>
