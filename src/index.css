@@ -50,6 +50,7 @@ ul {
 a {
   font-weight: 700;
   text-decoration: none;
+  cursor: pointer
 }
 a:hover {
   color: #535bf2;
@@ -61,6 +62,12 @@ a:hover {
   flex-flow: column;
   align-items: center;
   margin-top: 40px;
+}
+
+.search {
+  display: inline-flex;
+  width: 30%;
+  justify-content: center;
 }
 
 .filters {
@@ -77,7 +84,7 @@ a:hover {
   margin: 6px;
 }
 
-label { 
+.checkbox { 
   padding: 5px 10px;
   border-radius: 20px;
   font-family: 'Archivo Black', sans-serif;
@@ -86,7 +93,6 @@ label {
   background-color: #453E4F;
   box-shadow: none;
   cursor: pointer;
-  transition: border-color 0.25s;
   color: white;
   position: relative;
 }
@@ -100,17 +106,16 @@ label {
   transition: background-color 0.2s;
 }
 
+.unchecked-styles {
+  background-color: #453E4F;
+  transition: background-color 0.2s;
+}
+
+
 .checked-styles:hover {
   background-color: #f8d697;
 }
   
-
-.unchecked-styles {
-  background-color: #453E4F;
-  transition: background-color 0.2s;
-  border: none;
-}
-
 .unchecked-styles:hover {
   background-color: #cac4d1;
 }
@@ -239,6 +244,7 @@ button:active {
 
 i {
   margin-right: 15px;
+  color: lavenderblush;
 }
 
 @media (prefers-color-scheme: light) {

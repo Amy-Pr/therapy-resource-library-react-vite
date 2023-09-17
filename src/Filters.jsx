@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Card from './Card';
+import TextField from '@mui/material/TextField';
 
 
 function Filters({data, loading}) {
@@ -64,16 +65,14 @@ function Filters({data, loading}) {
             <section className="resources">
             <h4>Type in a keyword or filter by tags:</h4>
               <div className="search">
+                  <TextField id="outlined-basic" label="Search" variant="outlined" fullWidth
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    value={searchTerm}
+                    size="small"
+                    color="secondary"
 
-                    <input 
-                      type="text" 
-                      className="" 
-                      placeholder="Search by keyword" 
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                      />
-
-                      <button onClick={clearSearch}>clear</button>
+                  />
+                  <button onClick={clearSearch}>clear</button>
                 </div>
 
                 {/* <h4>Filter by tags:</h4> */}
@@ -85,7 +84,7 @@ function Filters({data, loading}) {
                         <div className="filter-div">
                         <h5>Therapy type:</h5>
                         {therapyFilters.map((selector) => (
-                            <label key={selector} className={updateCheckedStyles(selector)}>
+                            <label id="chip" key={selector} className={updateCheckedStyles(selector)}>
                                 
                                 <input 
                                   className="selector" 
