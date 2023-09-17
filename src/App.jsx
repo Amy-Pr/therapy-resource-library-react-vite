@@ -74,10 +74,6 @@ function App() {
 
                   </AccordionDetails>
                 </Accordion>
-                    {/* <h2>Welcome to the Library</h2>
-                    <p>Below is a curated collection of online resources that I've collected over 5 years as a speech-language pathologist serving
-                        schools and private clients in teletherapy. The library is in its beta version and new and improved functions are on the way!
-                    </p> */}
                 </div>
             </section>
 
