@@ -8,6 +8,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Typography from '@mui/material/Typography';
 
+
 function App() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -33,9 +34,8 @@ function App() {
     <>
     
       <h1> The Speech and Language <br/>
-                 Teletherapy Resource Library</h1>
+                 Teletherapy Resource Library</h1> 
                  
-
             <section className="intro">
                 <div class="overview">
                 <Accordion 
@@ -78,8 +78,17 @@ function App() {
             </section>
 
             <Filters data={data} loading={loading}/>
-              
-    </>
+
+            <div id="footer">
+              <p>Built by Amy Preci &#169; 2023</p>
+              <div>
+                <i class="fa-brands fa-github fa-lg"></i> 
+                <i class="fa-brands fa-linkedin-in fa-lg"></i>
+                <i class="fa-solid fa-mug-hot fa-lg"></i>
+              </div>
+            </div>
+
+    </> 
   )
 }
 
