@@ -62,7 +62,7 @@ function Filters({data, loading}) {
     return (
         <>
             <section className="resources">
-
+            <h4>Type in a keyword or filter by tags:</h4>
               <div className="search">
 
                     <input 
@@ -99,7 +99,7 @@ function Filters({data, loading}) {
                             </label> 
 
                         ))}
-                        <button onClick={resetTherapyFilters}>Clear Filters</button>
+                        <button onClick={resetTherapyFilters}>clear</button>
                         </div>
 
                         <div className="filter-div">
@@ -117,7 +117,7 @@ function Filters({data, loading}) {
                             </label> 
                             
                         ))}
-                        <button onClick={resetActivityFilters}>Clear Filters</button>
+                        <button onClick={resetActivityFilters}>clear</button>
                         </div>
                         
                     </div>
