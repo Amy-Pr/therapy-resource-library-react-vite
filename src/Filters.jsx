@@ -84,10 +84,10 @@ function Filters({data, loading}) {
                         <div className="filter-div">
                         <h5>Therapy type:</h5>
                         {therapyFilters.map((selector) => (
-                            <label id="chip" key={selector} className={updateCheckedStyles(selector)}>
+                            <label key={selector} className={updateCheckedStyles(selector)}>
                                 
                                 <input 
-                                  className="selector" 
+                                  // className="selector" 
                                   name={selector} 
                                   checked={selectedFilters.includes(selector)} 
                                   type="checkbox" 
@@ -107,7 +107,7 @@ function Filters({data, loading}) {
                             <label key={selector} className={updateCheckedStyles(selector)}>
                                 
                                 <input 
-                                  className="selector" 
+                                  // className="selector" 
                                   name={selector} 
                                   checked={selectedFilters.includes(selector)} 
                                   type="checkbox" 
