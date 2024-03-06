@@ -53,7 +53,11 @@ function Filters({data, loading}) {
       return matchesFilters && matchesSearch;
   });
 
+    //COUNTER  
     let counter = filteredData.length
+
+    //Highlighting Searched Text function
+    
 
     const updateCheckedStyles = (selection) => {
       return selectedFilters.includes(selection) ? 'checked-styles checkbox' : 'unchecked-styles checkbox' ; 
