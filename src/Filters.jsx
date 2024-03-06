@@ -145,6 +145,7 @@ function Filters({data, loading}) {
                     description={description} 
                     link={link}
                     tags={tags}
+                    searchTerm={searchTerm}
                   />
               ))
             
