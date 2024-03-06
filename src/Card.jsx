@@ -42,7 +42,6 @@ function Card ({title, description, link, tags, searchTerm}) {
 
     }
 
-// }
 
     
 
