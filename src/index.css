@@ -77,10 +77,6 @@ a:hover {
   margin: 15px 0;
 }
 
-.highlight {
-  background-color: yellow;
-}
-
 /*Filter Chip Styles*/
 .filter-div {
   display: inline-flex;
