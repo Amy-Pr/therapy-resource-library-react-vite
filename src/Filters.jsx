@@ -51,15 +51,18 @@ function Filters({data, loading}) {
           description.toLowerCase().includes(searchTerm.toLowerCase());
       //Only keeps the cards in the array that statisfies these two conditions
       return matchesFilters && matchesSearch;
-  });
+    });
 
+    //COUNTER  
     let counter = filteredData.length
 
+    //ADD STYLES TO SELECTED FILTER CHIP
     const updateCheckedStyles = (selection) => {
       return selectedFilters.includes(selection) ? 'checked-styles checkbox' : 'unchecked-styles checkbox' ; 
     };
 
     //TODO: For UX, consider instead of "filter" terminology, use "search by tags" and "clear selection"
+
     return (
         <>
             <section className="resources">
@@ -141,6 +144,7 @@ function Filters({data, loading}) {
                     description={description} 
                     link={link}
                     tags={tags}
+                    searchTerm={searchTerm}
                   />
               ))
             
