@@ -50,7 +50,7 @@ ul {
 }
 
 a {
-  font-weight: 500;
+  font-weight: 700;
   text-decoration: none;
   cursor: pointer
 }
@@ -89,7 +89,8 @@ a:hover {
 .checkbox { 
   padding: 5px 10px;
   border-radius: 20px;
-  font-family: 'Archivo Black', sans-serif;
+  font-family: "Prompt", sans-serif;
+  font-weight: 300;
   font-size: 1rem;
   margin: 5px;
   background-color: #453E4F;
@@ -160,7 +161,9 @@ button:focus-visible {
 button {
   padding: 3px 6px;
   border-radius: 5px;
-  font-family: 'Archivo Black', sans-serif;
+  /* font-family: 'Archivo Black', sans-serif; */
+  font-family: "Prompt", sans-serif;
+  font-weight: 300;
   font-size: 1rem;
   margin: 5px;
   /* cursor: pointer; */
