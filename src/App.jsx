@@ -34,7 +34,7 @@ function App() {
     <>
     
       <h1> The Speech and Language <br/>
-                 Teletherapy Resource Library</h1> 
+            Teletherapy Resource Library</h1> 
                  
             <section className="intro">
                 <div className="overview">
@@ -61,15 +61,15 @@ function App() {
 
                     <Typography sx={{px: 5, fontFamily: '"Raleway", sans-serif', fontWeight: '500'}} paragraph>
                     In addition to speech therapy, I am also a javascript developer. This site was created using React and Vite.js. To
-                    learn more about how I built it, check out the repository on <a>my GitHub</a>. 
+                    learn more about how I built it, check out the repository on <a href="https://github.com/Amy-Pr" target="_blank">my GitHub</a>. 
                     </Typography>
 
                     <Typography sx={{px: 5, fontFamily: '"Raleway", sans-serif', fontWeight: '500'}} paragraph>
-                    Want to collaborate? Connect with me on <a>LinkedIn</a> and check out <a>my dev Portfolio</a>. 
+                    Want to collaborate? Connect with me on <a href="https://www.linkedin.com/in/amy-preci-developer" target="_blank">LinkedIn</a> and check out <a href="https://www.amytechtherapy.com/" target="_blank">my dev Portfolio</a>. 
                     </Typography>
 
                     <Typography sx={{px: 5, fontFamily: '"Raleway", sans-serif', fontWeight: '500'}} paragraph>
-                    If you like this app and want to support future projects like this, <a>fill up my coffee cup</a>, and I will continue to fill up the database. Enjoy!
+                    If you like this app and want to support future projects like this, <a href="https://www.buymeacoffee.com/amytechtherapy" target="_blank">fill up my coffee cup</a>, and I will continue to fill up the database. Enjoy!
                     </Typography>
                     <div className="coffee-div">
                       <a href="https://www.buymeacoffee.com/amytechtherapy" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" className="coffee-img"/></a>
@@ -85,11 +85,11 @@ function App() {
             <Filters data={data} loading={loading}/>
 
             <div id="footer">
-              <p>Built by Amy Preci &#169; 2023</p>
+              <p>Built by Amy Preci &#169; 2024</p>
               <div>
-                <i className="fa-brands fa-github fa-lg"></i> 
-                <i className="fa-brands fa-linkedin-in fa-lg"></i>
-                <i className="fa-solid fa-mug-hot fa-lg"></i>
+                <a href='https://github.com/Amy-Pr' target="_blank"><i className="fa-brands fa-github fa-lg"></i> </a>
+                <a href='https://www.linkedin.com/in/amy-preci-developer' target="_blank"><i className="fa-brands fa-linkedin-in fa-lg"></i></a>
+                <a href='https://www.buymeacoffee.com/amytechtherapy' target="_blank"><i className="fa-solid fa-mug-hot fa-lg"></i></a>
               </div>
             </div>
 
