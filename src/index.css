@@ -75,7 +75,7 @@ a:hover {
 .filters {
   display: flex;
   flex-flow: column;
-  align-items: start;
+  align-items: center;
   margin: 15px 0;
 }
 
@@ -265,6 +265,28 @@ i {
   }
 } 
 
+@media (max-width: 768px) {
+  #root {
+    width: 90%;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  h5 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .filter-div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+}
+
 @media (max-width: 440px) {
   #cards-section {
     flex-flow: column;
@@ -281,6 +303,8 @@ i {
   }
   
 }
+
+
 
 /*TODO: Mobile styling of filter chips*/
 
