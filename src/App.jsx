@@ -37,7 +37,7 @@ function App() {
                  Teletherapy Resource Library</h1> 
                  
             <section className="intro">
-                <div class="overview">
+                <div className="overview">
                 <Accordion 
                   sx = {{bgcolor: "#C8CDE0"}}
                   defaultExpanded
@@ -49,31 +49,36 @@ function App() {
                     sx = {{textAlign: 'center'}}
                 
                   >
-                  <Typography sx={{width: '100%', fontFamily: '"Raleway", sans-serif'}} variant='h5'>About the Library</Typography>
+                  <Typography sx={{width: '100%', fontFamily: '"Raleway", sans-serif', fontWeight: '500'}} variant='h5'>About the Library</Typography>
                  
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography sx={{px: 5, fontFamily: '"Raleway", sans-serif'}} paragraph>
+                    <Typography sx={{px: 5, fontFamily: '"Raleway", sans-serif', fontWeight: '500'}} paragraph>
                     Below is a curated, searchable collection of online resources that I've collected over 6 years as a speech-language 
                     pathologist serving schools and private clients through teletherapy. The library is in its beta version. Check back for new 
                     and improved features!
                     </Typography>
 
-                    <Typography sx={{px: 5, fontFamily: '"Raleway", sans-serif'}} paragraph>
+                    <Typography sx={{px: 5, fontFamily: '"Raleway", sans-serif', fontWeight: '500'}} paragraph>
                     In addition to speech therapy, I am also a javascript developer. This site was created using React and Vite.js. To
                     learn more about how I built it, check out the repository on <a>my GitHub</a>. 
                     </Typography>
 
-                    <Typography sx={{px: 5, fontFamily: '"Raleway", sans-serif'}} paragraph>
+                    <Typography sx={{px: 5, fontFamily: '"Raleway", sans-serif', fontWeight: '500'}} paragraph>
                     Want to collaborate? Connect with me on <a>LinkedIn</a> and check out <a>my dev Portfolio</a>. 
                     </Typography>
 
-                    <Typography sx={{px: 5, fontFamily: '"Raleway", sans-serif'}} paragraph>
+                    <Typography sx={{px: 5, fontFamily: '"Raleway", sans-serif', fontWeight: '500'}} paragraph>
                     If you like this app and want to support future projects like this, <a>fill up my coffee cup</a>, and I will continue to fill up the database. Enjoy!
                     </Typography>
-
+                    <div className="coffee-div">
+                      <a href="https://www.buymeacoffee.com/amytechtherapy" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" className="coffee-img"/></a>
+                    </div>
                   </AccordionDetails>
+                  
                 </Accordion>
+
+
                 </div>
             </section>
 
@@ -82,9 +87,9 @@ function App() {
             <div id="footer">
               <p>Built by Amy Preci &#169; 2023</p>
               <div>
-                <i class="fa-brands fa-github fa-lg"></i> 
-                <i class="fa-brands fa-linkedin-in fa-lg"></i>
-                <i class="fa-solid fa-mug-hot fa-lg"></i>
+                <i className="fa-brands fa-github fa-lg"></i> 
+                <i className="fa-brands fa-linkedin-in fa-lg"></i>
+                <i className="fa-solid fa-mug-hot fa-lg"></i>
               </div>
             </div>
 
