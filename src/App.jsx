@@ -49,26 +49,26 @@ function App() {
                     sx = {{textAlign: 'center'}}
                 
                   >
-                  <Typography sx={{width: '100%'}} variant='h5'>About the Library</Typography>
+                  <Typography sx={{width: '100%', fontFamily: '"Raleway", sans-serif'}} variant='h5'>About the Library</Typography>
                  
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography sx={{px: 5}} paragraph>
+                    <Typography sx={{px: 5, fontFamily: '"Raleway", sans-serif'}} paragraph>
                     Below is a curated, searchable collection of online resources that I've collected over 6 years as a speech-language 
                     pathologist serving schools and private clients through teletherapy. The library is in its beta version. Check back for new 
                     and improved features!
                     </Typography>
 
-                    <Typography sx={{px: 5}} paragraph>
+                    <Typography sx={{px: 5, fontFamily: '"Raleway", sans-serif'}} paragraph>
                     In addition to speech therapy, I am also a javascript developer. This site was created using React and Vite.js. To
                     learn more about how I built it, check out the repository on <a>my GitHub</a>. 
                     </Typography>
 
-                    <Typography sx={{px: 5}} paragraph>
+                    <Typography sx={{px: 5, fontFamily: '"Raleway", sans-serif'}} paragraph>
                     Want to collaborate? Connect with me on <a>LinkedIn</a> and check out <a>my dev Portfolio</a>. 
                     </Typography>
 
-                    <Typography sx={{px: 5}} paragraph>
+                    <Typography sx={{px: 5, fontFamily: '"Raleway", sans-serif'}} paragraph>
                     If you like this app and want to support future projects like this, <a>fill up my coffee cup</a>, and I will continue to fill up the database. Enjoy!
                     </Typography>
 
