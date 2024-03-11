@@ -27,6 +27,8 @@ function Filters({data, loading}) {
        
     }
 
+  
+
     //Clear buttons: Keeps only the selections that are not included in the specified array (group of tags)
     const resetTherapyFilters = () => {
       setSelectedFilters((prevState) => prevState.filter((selection) => !therapyFilters.includes(selection)))
@@ -87,7 +89,14 @@ function Filters({data, loading}) {
                         <div className="filter-div">
                         <h5>Therapy type:</h5>
                         {therapyFilters.map((selector) => (
-                            <label key={selector} className={updateCheckedStyles(selector)}>
+                            <label key={selector} className={updateCheckedStyles(selector)}
+                              tabIndex="0" 
+                              onKeyDown={(e) => {
+                                if (e.key === ' ' || e.key === 'Enter') { 
+                                  handleFilterSelection({ target: { name: selector, checked: !selectedFilters.includes(selector) }}); 
+                                }
+                              }}
+                            >
                                 
                                 <input 
                                   // className="selector" 
