@@ -258,6 +258,10 @@ button:active {
   text-align: center;
 }
 
+#footer a:hover {
+  text-decoration: none;
+}
+
 i {
   margin-right: 15px;
   color: lavenderblush;
