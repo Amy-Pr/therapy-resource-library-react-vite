@@ -172,17 +172,17 @@ button:focus-visible {
 button {
   padding: 3px 6px;
   border-radius: 5px;
-  /* font-family: 'Archivo Black', sans-serif; */
   font-family: "Prompt", sans-serif;
   font-weight: 300;
   font-size: 1rem;
   margin: 5px;
   /* cursor: pointer; */
+  border: 2px solid darkgray;
   
 }
 
 button:hover {
-  border: 3px solid #646cff;
+  border: 2px solid purple;
 }
 
 button:active {
@@ -253,13 +253,17 @@ button:active {
   background-color:#453E4F;
   width: 100%;
   border-radius: 10px;
-  color: white;
+  color: lavenderblush;
   padding: 10px 0;
   text-align: center;
 }
 
 #footer a:hover {
   text-decoration: none;
+}
+
+i:hover {
+  color: #AC80A0;
 }
 
 i {
