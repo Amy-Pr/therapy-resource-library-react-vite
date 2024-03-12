@@ -27,6 +27,18 @@ function Filters({data, loading}) {
        
     }
 
+    //Manually updates the filter chips with keyboard interaction using a custom event object
+    const handleCheckboxKeyDown = (e, selector) => {
+      if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault(); 
+          handleFilterSelection ({
+          target: {
+              name: selector,
+              checked: !selectedFilters.includes(selector)
+          }
+      });
+    }
+  };
   
 
     //Clear buttons: Keeps only the selections that are not included in the specified array (group of tags)
@@ -89,13 +101,11 @@ function Filters({data, loading}) {
                         <div className="filter-div">
                         <h5>Therapy type:</h5>
                         {therapyFilters.map((selector) => (
-                            <label key={selector} className={updateCheckedStyles(selector)}
+                            <label 
+                              key={selector} 
+                              className={updateCheckedStyles(selector)}
                               tabIndex="0" 
-                              onKeyDown={(e) => {
-                                if (e.key === ' ' || e.key === 'Enter') { 
-                                  handleFilterSelection({ target: { name: selector, checked: !selectedFilters.includes(selector) }}); 
-                                }
-                              }}
+                              onKeyDown={(e) => handleCheckboxKeyDown(e, selector)}
                             >
                                 
                                 <input 
@@ -105,7 +115,7 @@ function Filters({data, loading}) {
                                   type="checkbox" 
                                   onChange={handleFilterSelection}/>
 
-                                <span>{selector}</span>
+                                  <span>{selector}</span>
 
                             </label> 
 
@@ -116,7 +126,12 @@ function Filters({data, loading}) {
                         <div className="filter-div">
                         <h5>Activity type:</h5>
                         {activityFilters.map((selector) => (
-                            <label key={selector} className={updateCheckedStyles(selector)}>
+                          <label 
+                              key={selector} 
+                              className={updateCheckedStyles(selector)}
+                              tabIndex="0" 
+                              onKeyDown={(e) => handleCheckboxKeyDown(e, selector)}
+                            >
                                 
                                 <input 
                                   // className="selector" 

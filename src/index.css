@@ -97,6 +97,9 @@ a:hover {
   margin: 6px;
 }
 
+label:focus-visible {
+  outline: 3px solid purple;
+}
 
 .checkbox { 
   padding: 5px 10px;
