@@ -75,12 +75,11 @@ function Filters({data, loading}) {
       return selectedFilters.includes(selection) ? 'checked-styles checkbox' : 'unchecked-styles checkbox' ; 
     };
 
-    //TODO: For UX, consider instead of "filter" terminology, use "search by tags" and "clear selection"
 
     return (
         <>
             <section className="resources">
-            <h4>Type in a keyword or filter by tags:</h4>
+            <h4>Type in a keyword or search by tags:</h4>
               <div className="search">
                   <TextField id="outlined-basic" label="Search" variant="outlined" fullWidth
                     onChange={(e) => setSearchTerm(e.target.value)}
@@ -89,7 +88,7 @@ function Filters({data, loading}) {
                     color="secondary"
 
                   />
-                  <button onClick={clearSearch}>clear</button>
+                  <button onClick={clearSearch}>reset</button>
                 </div>
 
                 {/* <h4>Filter by tags:</h4> */}
@@ -120,7 +119,7 @@ function Filters({data, loading}) {
                             </label> 
 
                         ))}
-                        <button onClick={resetTherapyFilters}>clear</button>
+                        <button onClick={resetTherapyFilters}>reset</button>
                         </div>
 
                         <div className="filter-div">
@@ -143,7 +142,7 @@ function Filters({data, loading}) {
                             </label> 
                             
                         ))}
-                        <button onClick={resetActivityFilters}>clear</button>
+                        <button onClick={resetActivityFilters}>reset</button>
                         </div>
                         
                     </div>
