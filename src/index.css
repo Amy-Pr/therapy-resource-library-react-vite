@@ -306,6 +306,8 @@ i {
   #cards-section {
     flex-flow: column;
     align-items: center;
+    justify-content: flex-start;
+    min-height: 400px;
   }
   .card {
     width: 320px;
