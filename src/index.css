@@ -11,20 +11,12 @@ body {
 
 /*root is like "main" and these are the original VITE styles; customized in App.css*/
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-    
+  -webkit-text-size-adjust: 100%;  
 }
 
 
@@ -55,8 +47,9 @@ a {
   cursor: pointer;
   color: #04598b;
 }
+
 a:hover {
-  /* color: #535bf2; */
+  color: #e1b14c;
   text-decoration: underline dotted;
 }
 
@@ -117,8 +110,6 @@ label:focus-visible {
 
 
 .checked-styles {
-  /* background-color: #ac80a0; */
-  /* background: #AC81F7; */
   background-color: #e1b14c;
   color: black;
   transition: background-color 0.2s;
@@ -168,11 +159,6 @@ label:focus-visible {
 
 /*Button styles*/
 
-/* button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
-
 button {
   padding: 3px 6px;
   border-radius: 5px;
@@ -180,8 +166,8 @@ button {
   font-weight: 300;
   font-size: 1rem;
   margin: 5px;
-  /* cursor: pointer; */
   border: 2px solid darkgray;
+  background-color: lightgray;
   
 }
 
@@ -220,7 +206,7 @@ button:active {
 }
 
 
-/*Styles for resource card*/
+/*Styles resource card*/
 .card {
   width: 400px;
   height: 350px;
@@ -277,17 +263,19 @@ i {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #333;
+    background-color:#E8EFF7;
   }
+
   a:hover {
-    /* color: #747bff; */
     color: #e1b14c;
   }
+
   button {
     background-color:lightgray;
   }
 } 
+
 
 @media (max-width: 768px) {
   #root {
@@ -330,7 +318,4 @@ i {
   }
 }
 
-
-
-/*TODO: Mobile styling of filter chips*/
 
