@@ -87,9 +87,9 @@ function App() {
             <div id="footer">
               <p>Built by Amy Preci &#169; 2024</p>
               <div>
-                <a href='https://github.com/Amy-Pr' target="_blank"><i className="fa-brands fa-github fa-lg"></i> </a>
-                <a href='https://www.linkedin.com/in/amy-preci-developer' target="_blank"><i className="fa-brands fa-linkedin-in fa-lg"></i></a>
-                <a href='https://www.buymeacoffee.com/amytechtherapy' target="_blank"><i className="fa-solid fa-mug-hot fa-lg"></i></a>
+                <a href='https://github.com/Amy-Pr' target="_blank" aria-label="Visit my GitHub page"><i className="fa-brands fa-github fa-lg"></i> </a>
+                <a href='https://www.linkedin.com/in/amy-preci-developer' target="_blank" aria-label="Visit my LinkedIn page"><i className="fa-brands fa-linkedin-in fa-lg"></i></a>
+                <a href='https://www.buymeacoffee.com/amytechtherapy' target="_blank" aria-label="Buy me a coffee"><i className="fa-solid fa-mug-hot fa-lg"></i></a>
               </div>
             </div>
 
