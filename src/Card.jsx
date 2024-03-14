@@ -4,7 +4,7 @@ import Highlighter from "react-highlight-words";
 function Card ({title, description, link, tags, searchTerm}) {
 
     const tagName = tags.map(tag => {
-        return <li>{tag}</li>
+        return <li key={tag}>{tag}</li>
     })
 
 

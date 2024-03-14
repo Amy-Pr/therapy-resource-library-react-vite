@@ -27,7 +27,21 @@ function Filters({data, loading}) {
        
     }
 
-    //Clear buttons: Keeps only the selections that are not included in the specified array (group of tags)
+    //Manually updates the filter chip selection with keyboard interaction using a custom event object
+    const handleCheckboxKeyDown = (e, selector) => {
+      if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault(); 
+          handleFilterSelection ({
+          target: {
+              name: selector,
+              checked: !selectedFilters.includes(selector)
+          }
+      });
+    }
+  };
+  
+
+    //Reset buttons: Keeps only the selections that are not included in the specified array (group of tags)
     const resetTherapyFilters = () => {
       setSelectedFilters((prevState) => prevState.filter((selection) => !therapyFilters.includes(selection)))
     }
@@ -61,12 +75,11 @@ function Filters({data, loading}) {
       return selectedFilters.includes(selection) ? 'checked-styles checkbox' : 'unchecked-styles checkbox' ; 
     };
 
-    //TODO: For UX, consider instead of "filter" terminology, use "search by tags" and "clear selection"
 
     return (
         <>
             <section className="resources">
-            <h4>Type in a keyword or filter by tags:</h4>
+            <h4>Type in a keyword or search by tags:</h4>
               <div className="search">
                   <TextField id="outlined-basic" label="Search" variant="outlined" fullWidth
                     onChange={(e) => setSearchTerm(e.target.value)}
@@ -75,42 +88,46 @@ function Filters({data, loading}) {
                     color="secondary"
 
                   />
-                  <button onClick={clearSearch}>clear</button>
+                  <button onClick={clearSearch}>reset</button>
                 </div>
 
-                {/* <h4>Filter by tags:</h4> */}
-                    
-                    {/* TODO: Maybe make this it's own component? Down to line 129? */}
                     <div className="filters">
-                        
-                        
+
                         <div className="filter-div">
                         <h5>Therapy type:</h5>
                         {therapyFilters.map((selector) => (
-                            <label key={selector} className={updateCheckedStyles(selector)}>
+                            <label 
+                              key={selector} 
+                              className={updateCheckedStyles(selector)}
+                              tabIndex="0" 
+                              onKeyDown={(e) => handleCheckboxKeyDown(e, selector)}
+                            >
                                 
                                 <input 
-                                  // className="selector" 
                                   name={selector} 
                                   checked={selectedFilters.includes(selector)} 
                                   type="checkbox" 
                                   onChange={handleFilterSelection}/>
 
-                                <span>{selector}</span>
+                                  <span>{selector}</span>
 
                             </label> 
 
                         ))}
-                        <button onClick={resetTherapyFilters}>clear</button>
+                        <button onClick={resetTherapyFilters}>reset</button>
                         </div>
 
                         <div className="filter-div">
                         <h5>Activity type:</h5>
                         {activityFilters.map((selector) => (
-                            <label key={selector} className={updateCheckedStyles(selector)}>
+                          <label 
+                              key={selector} 
+                              className={updateCheckedStyles(selector)}
+                              tabIndex="0" 
+                              onKeyDown={(e) => handleCheckboxKeyDown(e, selector)}
+                            >
                                 
                                 <input 
-                                  // className="selector" 
                                   name={selector} 
                                   checked={selectedFilters.includes(selector)} 
                                   type="checkbox" 
@@ -119,7 +136,7 @@ function Filters({data, loading}) {
                             </label> 
                             
                         ))}
-                        <button onClick={resetActivityFilters}>clear</button>
+                        <button onClick={resetActivityFilters}>reset</button>
                         </div>
                         
                     </div>
