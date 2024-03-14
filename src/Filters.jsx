@@ -27,7 +27,7 @@ function Filters({data, loading}) {
        
     }
 
-    //Manually updates the filter chips with keyboard interaction using a custom event object
+    //Manually updates the filter chip selection with keyboard interaction using a custom event object
     const handleCheckboxKeyDown = (e, selector) => {
       if (e.key === ' ' || e.key === 'Enter') {
           e.preventDefault(); 
@@ -41,7 +41,7 @@ function Filters({data, loading}) {
   };
   
 
-    //Clear buttons: Keeps only the selections that are not included in the specified array (group of tags)
+    //Reset buttons: Keeps only the selections that are not included in the specified array (group of tags)
     const resetTherapyFilters = () => {
       setSelectedFilters((prevState) => prevState.filter((selection) => !therapyFilters.includes(selection)))
     }
@@ -91,12 +91,8 @@ function Filters({data, loading}) {
                   <button onClick={clearSearch}>reset</button>
                 </div>
 
-                {/* <h4>Filter by tags:</h4> */}
-                    
-                    {/* TODO: Maybe make this it's own component? Down to line 129? */}
                     <div className="filters">
-                        
-                        
+
                         <div className="filter-div">
                         <h5>Therapy type:</h5>
                         {therapyFilters.map((selector) => (
@@ -108,7 +104,6 @@ function Filters({data, loading}) {
                             >
                                 
                                 <input 
-                                  // className="selector" 
                                   name={selector} 
                                   checked={selectedFilters.includes(selector)} 
                                   type="checkbox" 
@@ -133,7 +128,6 @@ function Filters({data, loading}) {
                             >
                                 
                                 <input 
-                                  // className="selector" 
                                   name={selector} 
                                   checked={selectedFilters.includes(selector)} 
                                   type="checkbox" 
