@@ -271,6 +271,11 @@ i {
     color: #e1b14c;
   }
 
+  /*Possible to-do: make cards clickable and change background on hover
+  /* a:hover #resource {
+    background-color: lightsteelblue;
+  } */
+
   button {
     background-color:lightgray;
   }
